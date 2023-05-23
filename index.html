@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lånekalkulator</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>    
+  <div class="margin2"></div>
+  <h1>Lånekalkulator</h1>
+  <div>
+    <p>Et gratis verktøy for å få </p>
+      <p><b>oversikt over lån og kostnader</b></p>
+      <div class="margin1"></div>
+    <ul class="loan-types">
+      <li class="loan-type active" id="annuitetslan" onclick="selectLoanType('annuitetslan')">Annuitetslån</li>
+      <li class="loan-type" id="serielan" onclick="selectLoanType('serielan')">Serielån</li>
+    </ul>
+    <div class="row">
+      <div class="input-container" id="laan">
+        <span class="input-label">lån</span>
+        <input type="text" value="500 000" id="loanAmount" />
+        <span class="add-on-right"> kr </span>
+      </div>
+      <div class="input-container">
+        <span class="input-label">terminer pr. år</span>
+        <input type="text" value="12" id="termsPerYear">
+      </div>
+      <div class="input-container">
+        <span class="input-label">løpetid</span>
+        <input placeholder="2" type="text" class="years" id="loanYears">
+        <span class="add-on-left"> år </span>
+        <input placeholder="0" type="text" class="months" id="loanMonths">
+        <span class="add-on-right"> md </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-container">
+        <span class="input-label">termingebyr</span>
+        <input type="text" value="50" id="termFee">
+        <span class="add-on-right"> kr </span>
+      </div>
+      <div class="input-container">
+        <span class="input-label">rente</span>
+        <input type="text" placeholder="0.0" id="rente">
+        <span class="add-on-right"> % </span>
+      </div>
+    </div>
+    <div class="row">
+      <button onclick="calculateLoan()" id="calculateButton" class="button">Regn ut</button>
+    </div>    
+  </div>
+  <div id="result" class="loan-details"></div>
+</body>
+
+</html>
